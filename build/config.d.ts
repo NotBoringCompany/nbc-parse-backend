@@ -12,5 +12,7 @@ declare const _default: Readonly<{
     RATE_LIMIT_ANONYMOUS: number;
     USE_STREAMS: boolean;
     STREAMS_WEBHOOK_URL: string;
+    DASHBOARD_USER: string;
+    DASHBOARD_PASSWORD: string;
 } & import("envalid").CleanedEnvAccessors>;
 export default _default;

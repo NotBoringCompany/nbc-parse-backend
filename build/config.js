@@ -77,5 +77,12 @@ exports.default = (0, envalid_1.cleanEnv)(process.env, {
         desc: 'Webhook url for streams sync',
         default: '/streams-webhook',
     }),
+    // Parse Dashboard
+    DASHBOARD_USER: (0, envalid_1.str)({
+        desc: 'Dashboard user',
+    }),
+    DASHBOARD_PASSWORD: (0, envalid_1.str)({
+        desc: 'Dashboard password',
+    }),
 });
 //# sourceMappingURL=config.js.map
