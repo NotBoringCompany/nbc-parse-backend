@@ -56,4 +56,12 @@ export default cleanEnv(process.env, {
     desc: 'Webhook url for streams sync',
     default: '/streams-webhook',
   }),
+
+  // Parse Dashboard
+  DASHBOARD_USER: str({
+    desc: 'Dashboard user',
+  }),
+  DASHBOARD_PASSWORD: str({
+    desc: 'Dashboard password',
+  }),
 });

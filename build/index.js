@@ -14,6 +14,7 @@ const parse_server_1 = __importDefault(require("parse-server"));
 const http_1 = __importDefault(require("http"));
 const ngrok_1 = __importDefault(require("ngrok"));
 const parse_server_2 = require("@moralisweb3/parse-server");
+const parseDashboard_1 = require("./parseDashboard");
 exports.app = (0, express_1.default)();
 moralis_1.default.start({
     apiKey: config_1.default.MORALIS_API_KEY,
@@ -26,6 +27,7 @@ exports.app.use((0, parse_server_2.streamsSync)(parseServer_1.parseServer, {
     webhookUrl: '/streams',
 }));
 exports.app.use(`/server`, parseServer_1.parseServer.app);
+exports.app.use(`/dashboard`, parseDashboard_1.parseDashboard);
 const httpServer = http_1.default.createServer(exports.app);
 httpServer.listen(config_1.default.PORT, async () => {
     if (config_1.default.USE_STREAMS) {
