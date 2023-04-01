@@ -17,14 +17,15 @@ async function requestMessage({ address, chain, networkType, }) {
         address,
         chain,
         networkType,
-        domain: url.hostname,
-        uri: url.toString(),
+        domain: 'nbc-parse-backend.up.railway.app',
+        uri: 'htps://asdlolol.com',
         statement: STATEMENT,
         notBefore: now.toISOString(),
         expirationTime: expirationTime.toISOString(),
         timeout: TIMEOUT,
     });
     const { message } = result.toJSON();
+    console.log('message', message);
     return message;
 }
 exports.requestMessage = requestMessage;
