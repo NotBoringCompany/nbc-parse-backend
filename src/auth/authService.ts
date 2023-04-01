@@ -20,7 +20,7 @@ export async function requestMessage({
   chain: string;
   networkType: 'evm';
 }) {
-  // const url = new URL(config.SERVER_URL);
+  const url = new URL(config.SERVER_URL);
   const now = new Date();
   const expirationTime = new Date(now.getTime() + EXPIRATION_TIME);
 
@@ -28,8 +28,8 @@ export async function requestMessage({
     address,
     chain,
     networkType,
-    domain: 'nbcompany',
-    uri: 'https://nbcompany.io',
+    domain: url.hostname,
+    uri: url.toString(),
     statement: STATEMENT,
     notBefore: now.toISOString(),
     expirationTime: expirationTime.toISOString(),
