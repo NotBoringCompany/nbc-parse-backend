@@ -38,6 +38,7 @@ export async function requestMessage({
 
   const { message } = result.toJSON();
 
+  console.log('message', message);
   return message;
 }
 
