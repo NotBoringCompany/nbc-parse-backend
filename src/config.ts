@@ -31,6 +31,10 @@ export default cleanEnv(process.env, {
     desc: 'Referenece to your server URL. Replace this when your app is hosted',
     devDefault: 'http://localhost:1337/server',
   }),
+  APP_URL: str({
+    desc: 'Referenece to your app URL. Replace this when your app is hosted',
+    devDefault: 'http://localhost:3000',
+  }),
 
   REDIS_CONNECTION_STRING: str({
     desc: 'Connection string for your redis instance in the format of redis://<host>:<port> or redis://<username>:<password>@<host>:<port>',

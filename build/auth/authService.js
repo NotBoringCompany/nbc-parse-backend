@@ -10,15 +10,15 @@ const STATEMENT = 'Please sign this message to confirm your identity.';
 const EXPIRATION_TIME = 900000;
 const TIMEOUT = 15;
 async function requestMessage({ address, chain, networkType, }) {
-    const url = new URL(config_1.default.SERVER_URL);
+    const url = new URL(config_1.default.APP_URL);
     const now = new Date();
     const expirationTime = new Date(now.getTime() + EXPIRATION_TIME);
     const result = await moralis_1.default.Auth.requestMessage({
         address,
         chain,
         networkType,
-        domain: 'nbc-webapp.vercel.app',
-        uri: 'https://nbc-webapp.vercel.app/',
+        domain: url.hostname,
+        uri: url.toString(),
         statement: STATEMENT,
         notBefore: now.toISOString(),
         expirationTime: expirationTime.toISOString(),
