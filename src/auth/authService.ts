@@ -28,8 +28,8 @@ export async function requestMessage({
     address,
     chain,
     networkType,
-    domain: url.hostname,
-    uri: url.toString(),
+    domain: 'nbc-parse-backend.up.railway.app',
+    uri: 'https://nbc-parse-backend.up.railway.app',
     statement: STATEMENT,
     notBefore: now.toISOString(),
     expirationTime: expirationTime.toISOString(),
@@ -40,3 +40,4 @@ export async function requestMessage({
 
   return message;
 }
+
