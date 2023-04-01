@@ -28,7 +28,7 @@ export async function requestMessage({
     address,
     chain,
     networkType,
-    domain: url.hostname,
+    domain: 'nbc-parse-backend.up.railway.app',
     uri: url.toString(),
     statement: STATEMENT,
     notBefore: now.toISOString(),
