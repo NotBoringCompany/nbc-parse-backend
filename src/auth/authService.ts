@@ -29,7 +29,7 @@ export async function requestMessage({
     chain,
     networkType,
     domain: 'nbc-parse-backend.up.railway.app',
-    uri: 'htps://asdlolol.com',
+    uri: url.toString(),
     statement: STATEMENT,
     notBefore: now.toISOString(),
     expirationTime: expirationTime.toISOString(),
@@ -38,7 +38,6 @@ export async function requestMessage({
 
   const { message } = result.toJSON();
 
-  console.log('message', message);
   return message;
 }
 

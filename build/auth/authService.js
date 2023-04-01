@@ -18,14 +18,13 @@ async function requestMessage({ address, chain, networkType, }) {
         chain,
         networkType,
         domain: 'nbc-parse-backend.up.railway.app',
-        uri: 'htps://asdlolol.com',
+        uri: url.toString(),
         statement: STATEMENT,
         notBefore: now.toISOString(),
         expirationTime: expirationTime.toISOString(),
         timeout: TIMEOUT,
     });
     const { message } = result.toJSON();
-    console.log('message', message);
     return message;
 }
 exports.requestMessage = requestMessage;
